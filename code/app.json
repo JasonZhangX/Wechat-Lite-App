@@ -1,0 +1,33 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/history/history",
+    "pages/service/service",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#03a9f4",
+    "navigationBarTitleText": "服务器仪表盘",
+    "navigationBarTextStyle":"white"
+  },
+ "tabBar": {
+    "borderStyle": "white",
+    "selectedColor": "#03a9f4",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "状态",
+      "iconPath": "images/clock.png",
+      "selectedIconPath": "images/clock-selected.png"
+    }, {
+      "pagePath": "pages/history/history",
+      "text": "历史",
+      "iconPath": "images/stats-bars.png",
+      "selectedIconPath": "images/stats-bars-selected.png"
+    }]
+  },
+  "networkTimeout": {
+    "request": 10000
+  },
+  "debug": true
+}
