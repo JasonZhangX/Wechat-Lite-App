@@ -1,18 +1,25 @@
 /**app.wxss**/
-.flex-container {
+
+.full-height {
   height: 100vh;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-item {
+  flex: 1 1 auto;
+}
+
+.flex-container_center {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 50rpx 50rpx;
-  box-sizing: border-box;
 }
-.flex-container_column_center{
+
+.flex-container_middle {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.flex-item{
-  flex:1 1 auto;
+  flex-direction: row;
+  align-items: center;
 }

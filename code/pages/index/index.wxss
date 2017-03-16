@@ -1,13 +1,57 @@
 /**index.wxss**/
 page{
-    font-size: 14rpx;
+    color: #323a45;
+}
+/*status information*/
+.status-info{
+    text-align: center;
 }
 .status-info icon{
-    display: block;
     margin-bottom: 20rpx;
 }
 .status-info text{
     display: block;
     font-size: 1.2rem;
     text-align: center;
+}
+.status-info .service-name{
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 10rpx;
+}
+.status-info .area{   
+    font-size: 0.9rem;
+    margin-bottom: 10rpx;
+}
+.status-info .desctiption{
+    padding: 5rpx 100rpx;
+    font-size: 0.8rem;
+    text-align: left;
+    line-height: 1.2rem;
+}
+/*status area*/
+.status-area{
+    margin-top: 40rpx;
+    margin-bottom: 50rpx;    
+}
+.status-area .area-detail{
+    margin-bottom: 10rpx;
+}
+.status-area .area-detail text{
+    display: block;
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 1.6em;
+}
+.status-area .update-time text{
+    font-size: 0.8rem;
+}
+/*bottom action*/
+.status-all_service{
+    margin-bottom: 40rpx;
+}
+.status-all_service navigator{
+    font-size: 1rem;
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;    
 }

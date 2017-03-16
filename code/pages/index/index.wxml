@@ -1,11 +1,31 @@
+
 <!--index.wxml-->
-<view class="flex-container">
-  <view class="flex-item status-info">
-    <block wx:if="{{status == 'OK'}}">
-      <icon type="success" size="128"/>
-      <text>{{title}}</text>
-    </block>  
+<view class="full-height flex-container_center">
+  <view class="flex-item flex-container_middle">
+      <view class="flex-item status-info">
+        <block wx:if="{{incidents.status == 'OK'}}">
+          <icon type="success" size="128" />
+          <text>{{incidents.title}}</text>
+        </block>
+        <block wx:else>
+          <icon type="info" size="128" />
+          <text class="service-name">{{incidents.title}}</text>
+          <text class="area">{{incidents.area}}</text>
+          <text class="desctiption">{{incidents.desctiption}}</text>       
+        </block>
+      </view>
   </view>
-  <view class="flex-item status-area"></view>
-  <view class="flex-item status-all_service"></view>
+  <view class="status-area">
+    <view class="area-detail">
+      <text>中国北区:{{area.chinaNorth}}</text>
+      <text>中国东区:{{area.chinaEast}}</text>
+      <text>中国地区:{{area.china}}</text>
+    </view>
+    <view class="update-time">
+      <text>更新时间：{{updateTime}}</text>
+    </view>
+  </view>
+  <view class="status-all_service">
+    <navigator url="../service/service" open-type="navigate">查看所有服务</navigator>
+  </view>
 </view>
