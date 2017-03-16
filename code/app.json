@@ -2,8 +2,7 @@
   "pages":[
     "pages/index/index",
     "pages/history/history",
-    "pages/service/service",
-    "pages/logs/logs"
+    "pages/service/service"
   ],
   "window":{
     "backgroundTextStyle":"light",

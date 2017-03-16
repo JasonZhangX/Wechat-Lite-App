@@ -1,10 +1,11 @@
 <!--index.wxml-->
-<view id="outter" bindtap="handleTap1">
-  outer view
-  <view id="middle" catchtap="handleTap2">
-    middle view
-    <view id="inner" bindtap="handleTap3">
-      inner view
-    </view>
+<view class="flex-container">
+  <view class="flex-item status-info">
+    <block wx:if="{{status == 'OK'}}">
+      <icon type="success" size="128"/>
+      <text>{{title}}</text>
+    </block>  
   </view>
+  <view class="flex-item status-area"></view>
+  <view class="flex-item status-all_service"></view>
 </view>
