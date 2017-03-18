@@ -1,0 +1,32 @@
+page{
+    color: #323a45;
+}
+.history-item{
+   padding-left:20rpx;
+   padding-right: 20rpx;
+   padding-top: 25rpx;
+   padding-bottom: 25rpx;
+}
+.history-item .date{
+    flex: 1;
+    text-align: center;
+    line-height: 1rem;
+    padding-left: 20rpx;
+}
+.history-item .date text{
+    
+    font-size: 0.8rem;
+}
+.history-item .content{
+    flex: 5;
+    padding-left: 80rpx;
+}
+.history-item .content text{
+    display: block;
+}
+.history-item .content .service{
+
+}
+.history-item .content .area{
+    font-size: 0.8rem;
+}
