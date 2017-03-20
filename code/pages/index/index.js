@@ -1,18 +1,16 @@
 //index.js
 //获取应用实例
 var AW = require('../../utils/util');
-var app = getApp()
+var app = getApp();
 Page({
-  config: {
-    api: 'https://www.windowsazurestatus.cn/api/incidents?api-version=1.0',
-    interval: 120000
-  },
   data: {
+    title: app.globalData.config.status.title,
+    path: app.globalData.config.status.path,
     incidents:{
       status: 'OK',
       title: '服务正常运行',
       area: '中国地区',
-      desctiption: '中国地区中国地区中中国地区中国地区中中国地区中国地区中中国地区中国地区',
+      desctiption: '中国地区中国地区中中国地区中国地区中中国地区中国地区中中国地区中国地区'
     },
     area:{
       chinaNorth: '所有服务正常',
@@ -23,7 +21,7 @@ Page({
   },
   init: function(){
     this.checkStatus();
-    setInterval(this.checkStatus, this.config.interval);
+    setInterval(this.checkStatus, app.globalData.config.status.interval);
   },
   onLoad: function () {
     // this.checkStatus();
@@ -36,12 +34,14 @@ Page({
     var that = this;
     this.loading(); 
     wx.request({
-      url: that.config.api,
+      url: app.globalData.config.status.api,
       data: {},
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       // header: {}, // 设置请求的 header
       success: function(res){
         // success
+        console.log(res);
+        that.formateData(res);
         wx.hideToast();
         console.log('success');
       },
@@ -55,8 +55,11 @@ Page({
       }
     })
   },
-  formateData: function(data){
-    return {};
+  formateData: function(res){
+    var lastUpdateTime = res.data.lastupdated;
+    this.setData({
+        updateTime: lastUpdateTime
+    });
   },
   loading: function(){
     wx.showToast({
@@ -67,8 +70,8 @@ Page({
   },
   onShareAppMessage: function () {
     return {
-      title: '自定义分享标题',
-      path: '/page/user?id=123'
+      title: this.data.title,
+      path: this.data.path
     }
   }
 })
