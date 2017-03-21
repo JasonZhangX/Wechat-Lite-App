@@ -1,10 +1,10 @@
 <view class="history-container">
-  <view class="history-item flex-container_middle" bindtap="viewDetail" wx:for="{{history}}" wx:key="{{item.id}}" data-id="{{item.id}}">
+  <view class="history-item flex-container_middle" bindtap="viewDetail" wx:for="{{incidents}}" wx:key="{{item.id}}" data-id="{{item.id}}">
     <view class="date flex-item">
-      <text>{{item.date}}</text>
+      <text>{{item.startMonth}}</text>
     </view>
     <view class="content flex-item">
-      <text class="service">{{item.service}}</text>
+      <text class="service">{{item.title}}</text>
       <text class="area">{{item.area}}</text>
     </view>
   </view>

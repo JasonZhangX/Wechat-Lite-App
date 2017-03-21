@@ -1,0 +1,12 @@
+page{
+    color: #323a45;
+}
+.service{
+    text-align: center;
+}
+.history-detail{
+    padding: 30rpx 50rpx;
+}
+.history-detail .description{
+    font-size: .8em;
+}

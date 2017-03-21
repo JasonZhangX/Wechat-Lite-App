@@ -29,4 +29,5 @@ page{
 }
 .history-item .content .area{
     font-size: 0.8rem;
+    margin-top: 10rpx;
 }

@@ -1,0 +1,20 @@
+<view>
+    <text>{{history.service}}</text>
+</view>
+<view class="history-detail">
+    <view class="title">
+        <text>{{history.title}}</text>
+    </view>
+    <view class="title">
+        <text>{{history.endDate}}</text>
+    </view>
+    <view class="title">
+        <text>{{history.startDate}}</text>
+    </view>        
+    <view class="area">
+        <text>{{history.area}}</text>
+    </view>
+    <view class="description">
+        <text>{{history.description}}</text>
+    </view>
+</view>
