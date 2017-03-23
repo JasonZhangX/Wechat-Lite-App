@@ -1,0 +1,75 @@
+<view class="service table">
+  <view class="row">
+    <view class="th tl">产品和服务</view>
+    <view class="th tr">中国</view>
+    <view class="th tr">北部</view>
+    <view class="th tr">东部</view>
+  </view>
+  <block wx:for="{{shd.category}}" wx:for-item="level1Item">
+    <view class="row level1">
+      <view class="td">{{level1Item.name}}</view>
+    </view>
+    <block wx:if="{{level1Item.service.length > 1}}">
+      <block wx:for="{{level1Item.service}}" wx:for-item="level2Item">
+        <view class="row level2" data-slug="{{level2Item.slug}}">
+          <view class="td tl">{{level2Item.name}}</view>
+          <view class="td tr">
+            <block wx:if="{{level2Item.regions.global}}">
+              <icon type="success" size="24" />
+            </block>
+          </view>
+          <view class="td tr">
+            <block wx:if="{{level2Item.regions['china-north']}}">
+              <icon type="success" size="24" />
+            </block>
+          </view>
+          <view class="td tr">
+            <block wx:if="{{level2Item.regions['china-east']}}">
+              <icon type="success" size="24" />
+            </block>
+          </view>
+        </view>
+        <block wx:if="{{level2Item['inner-services'].service.length > 0}}">
+          <view class="row level3" wx:for="{{level2Item['inner-services'].service}}" wx:for-item="level3Item" data-slug="{{level3Item.slug}}">
+          <view class="td tl">{{level3Item.name}}</view>
+          <view class="td tr">
+            <block wx:if="{{level2Item.regions.global}}">
+              <icon type="success" size="24" />
+            </block>
+          </view>
+          <view class="td tr">
+            <block wx:if="{{level2Item.regions['china-north']}}">
+              <icon type="success" size="24" />
+            </block>
+          </view>
+          <view class="td tr">
+            <block wx:if="{{level2Item.regions['china-east']}}">
+              <icon type="success" size="24" />
+            </block>
+          </view>
+          </view>
+        </block>
+      </block>
+    </block>
+    <block wx:else>
+      <view class="row level2" data-slug="{{level1Item.service.slug}}">
+        <view class="td tl">{{level1Item.service.name}}</view>
+          <view class="td tr">
+            <block wx:if="{{level1Item.service.regions.global}}">
+              <icon type="success" size="24" />
+            </block>
+          </view>
+          <view class="td tr">
+            <block wx:if="{{level1Item.service.regions['china-north']}}">
+              <icon type="success" size="24" />
+            </block>
+          </view>
+          <view class="td tr">
+            <block wx:if="{{level1Item.service.regions['china-east']}}">
+              <icon type="success" size="24" />
+            </block>
+          </view>
+      </view>
+    </block>
+  </block>
+</view>

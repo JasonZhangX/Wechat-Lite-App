@@ -2,11 +2,31 @@ page{
     color: #323a45;
 }
 .service{
+    padding: 50rpx 80rpx 30rpx;
     text-align: center;
 }
+.service icon{
+    text-align: center;
+}
+.service text{
+    text-align: center;    
+}
 .history-detail{
-    padding: 30rpx 50rpx;
+    padding: 50rpx 80rpx;
+}
+.history-detail .title{
+    font-size: 1.2rem;
+    margin-bottom: 15rpx;
+}
+.history-detail .startDate{
+    font-size: .8rem;
+}
+.history-detail .endDate{
+    font-size: .8rem;
+    margin-bottom: 15rpx;
 }
 .history-detail .description{
-    font-size: .8em;
+    margin-top: 15rpx;
+    font-size: .7rem;
+    line-height: 1.1rem;
 }

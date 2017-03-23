@@ -14,8 +14,7 @@ page{
     padding-left: 20rpx;
 }
 .history-item .date text{
-    
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 }
 .history-item .content{
     flex: 5;
@@ -25,9 +24,9 @@ page{
     display: block;
 }
 .history-item .content .service{
-
+    font-size: 0.9rem;
 }
 .history-item .content .area{
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     margin-top: 10rpx;
 }

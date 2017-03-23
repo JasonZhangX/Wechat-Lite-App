@@ -44,7 +44,7 @@ page{
     line-height: 1.6em;
 }
 .status-area .update-time text{
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 }
 /*bottom action*/
 .status-all_service{

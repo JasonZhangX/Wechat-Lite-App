@@ -1,0 +1,46 @@
+.service{
+    color: #323a45;
+    padding: 30rpx;
+}
+
+.table{
+    font-size: 0.8rem;
+}
+.table .row{
+    border-bottom: 1px solid #ccc;
+    clear: both;
+    display: flex;
+}
+
+.table .row .th,.table .row .td{
+    padding: 15rpx 10rpx;
+}
+
+.table .row .tl{
+    flex: 6;
+}
+
+.table .row .tr{
+    flex: 1;
+}
+
+
+.table .level1{
+    background-color: #e3e3e3;
+}
+
+.table .level2{
+    padding-left: 30rpx;
+}
+
+.table .level3{
+    padding-left: 50rpx;
+}
+
+.table .level2 .td{
+    font-size: .75rem;
+}
+
+.table .level3 .td{
+    font-size: .75rem;
+}

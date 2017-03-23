@@ -16,12 +16,13 @@ App({
       history: {
         title: '历史记录',
         path: 'pages/history/history',
-        api: 'https://www.azure.cn/support/status-api?api=history',
+        api: 'https://www.azure.cn/support/status-api?api=history'
         //interval: 120000
       },
       service: {
         title: '所有服务',
         path: 'pages/service/service',
+        api: 'https://wacnppe.blob.core.chinacloudapi.cn/marketing-resource/Content/support/shd.json'
       },
       historyDetail: {
         title: '历史详情',
