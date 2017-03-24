@@ -13,7 +13,9 @@ Page({
     formateData: function (res) {
         var historyDetail = {
             service: res.service,
+            icon: app.globalData.config.icon.baseURL + res.service + '.png',
             title: res.title,
+            status: res.status,
             area: res.area,
             description: res.description,
             startDate: res.startDate,

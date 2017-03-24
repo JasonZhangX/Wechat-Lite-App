@@ -1,6 +1,7 @@
 <view class="service">
     <view>
-        <icon type="download" size="128" color="gray"></icon>
+        <!--<icon type="download" size="128" color="gray"></icon>-->
+        <image mode="widthFix" src="{{history.icon}}"></image>
     </view>
     <view>
         <text>{{history.service}}</text>
@@ -9,15 +10,18 @@
 <view class="history-detail">
     <view class="title">
         <text>{{history.title}}</text>
-    </view>
+    </view>   
     <view class="startDate">
         开始时间：<text>{{history.startDate}}</text>
     </view>     
     <view class="endDate">
         结束时间：<text>{{history.endDate}}</text>
-    </view>       
+    </view> 
+    <view class="status">
+        事件类型：<text>{{history.status}}</text>
+    </view>           
     <view class="area">
-        区域：<text>{{history.area}}</text>
+        影响区域：<text>{{history.area}}</text>
     </view>
     <view class="description">
         <text>{{history.description}}</text>

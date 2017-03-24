@@ -23,3 +23,7 @@
   flex-direction: row;
   align-items: center;
 }
+
+.link_hover{
+  color: #03a9f4;
+}

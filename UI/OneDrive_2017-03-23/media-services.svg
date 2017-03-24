@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#323A45;}
+	.st1{fill:#FFFFFF;}
+	.st2{fill:#15B2E7;}
+	.st3{fill:#E1F3F8;}
+	.st4{clip-path:url(#SVGID_2_);}
+	.st5{opacity:0.15;fill:#FFFFFF;enable-background:new    ;}
+</style>
+<title>icons-azure</title>
+<g id="_Group_">
+	<path id="_Compound_Path_" class="st0" d="M45,35.5L24,48L3,35.5v-23L24,0l21,12.5V35.5z"/>
+	<path id="_Compound_Path_2" class="st1" d="M24,11c7.2,0,13,5.8,13,13s-5.8,13-13,13s-13-5.8-13-13S16.8,11,24,11z"/>
+	<path id="_Compound_Path_3" class="st2" d="M24,14c5.5,0,10,4.5,10,10s-4.5,10-10,10s-10-4.5-10-10S18.5,14,24,14z"/>
+	<path id="_Compound_Path_4" class="st1" d="M21,18v12l10-6L21,18z"/>
+	<path id="_Compound_Path_5" class="st3" d="M21,24v6l10-6H21z"/>
+	<g id="_Clip_Group_">
+		<g>
+			<defs>
+				<polygon id="SVGID_1_" points="45,35.5 24,48 3,35.5 3,12.5 24,0 45,12.5 				"/>
+			</defs>
+			<clipPath id="SVGID_2_">
+				<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+			</clipPath>
+			<g class="st4">
+				<path class="st5" d="M45,13"/>
+				<path class="st5" d="M45,35.5L24,48c-5.8-10.4-3-23.7,6.9-30.7c4.2-3,9.2-4.4,14.1-4.3L45,35.5z"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

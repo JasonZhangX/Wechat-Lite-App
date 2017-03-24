@@ -5,6 +5,10 @@ page{
     padding: 50rpx 80rpx 30rpx;
     text-align: center;
 }
+.service image{
+    width: 128px;
+    height: 128px;
+}
 .service icon{
     text-align: center;
 }
@@ -18,10 +22,18 @@ page{
     font-size: 1.2rem;
     margin-bottom: 15rpx;
 }
+.history-detail .status{
+    font-size: .8rem;
+    margin-bottom: 15rpx;
+}
 .history-detail .startDate{
     font-size: .8rem;
 }
 .history-detail .endDate{
+    font-size: .8rem;
+    margin-bottom: 15rpx;
+}
+.history-detail .area{
     font-size: .8rem;
     margin-bottom: 15rpx;
 }

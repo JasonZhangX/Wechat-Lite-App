@@ -25,6 +25,6 @@
     </view>
   </view>
   <view class="status-all_service">
-    <navigator url="../service/service" open-type="navigate">查看所有服务</navigator>
+    <navigator url="../service/service" open-type="navigate" hover="true" hover-class="link_hover">查看所有服务</navigator>
   </view>
 </view>

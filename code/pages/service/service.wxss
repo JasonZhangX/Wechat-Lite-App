@@ -10,6 +10,7 @@
     border-bottom: 1px solid #ccc;
     clear: both;
     display: flex;
+    align-items: center;
 }
 
 .table .row .th,.table .row .td{
@@ -34,7 +35,7 @@
 }
 
 .table .level3{
-    padding-left: 50rpx;
+    padding-left: 60rpx;
 }
 
 .table .level2 .td{

@@ -27,6 +27,9 @@ App({
       historyDetail: {
         title: '历史详情',
         path: 'pages/history-detail/history-detail',
+      },
+      icon: {
+        baseURL: 'https://wacnppe.blob.core.chinacloudapi.cn/marketing-resource/media/images/shd/'
       }
     },
     msg:{
@@ -35,7 +38,11 @@ App({
       ALL_SERVICE_IS_OK: '所有服务正常',
       CHINA_ALL: '中国地区',
       CHINA_EAST: '中国东区',
-      CHINA_NORTH: '中国北区'
+      CHINA_NORTH: '中国北区',
+      GOOD: '服务正常',
+      WARNING: '性能警告',
+      ERROR: '服务中断',
+      INFORMATION: '附加信息'
     }
   }
 })
