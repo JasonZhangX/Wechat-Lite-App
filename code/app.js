@@ -1,11 +1,58 @@
 //app.js
 App({
   onLaunch: function () {
-
+    this.getServicesName();
   },
-  globalData:{
+  getServicesName: function () {
+    var self = this;
+    this.sendRequest({
+      rUrl: self.globalData.config.serviceName.api,
+      formateData: function (servicNameData) {
+        self.globalData.serviceName = servicNameData;
+        console.log(self.globalData.serviceName);
+      }
+    });
+  },
+  sendRequest: function (oParam) {
+    var self = this;
+    this.loading();
+    wx.request({
+      url: oParam.rUrl,
+      data: {},
+      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      // header: {}, // 设置请求的 header
+      success: function (res) {
+        // success
+        console.log(res);
+        oParam.formateData && oParam.formateData(res.data);
+        console.log('success');
+      },
+      fail: function () {
+        // fail
+
+        console.log('fail');
+      },
+      complete: function () {
+        // complete
+        self.loading('hide');
+      }
+    })
+  },
+  loading: function (param) {
+    var self = this;
+    if (param === 'hide') {
+      wx.hideToast();
+    } else {
+      wx.showToast({
+        title: self.globalData.msg.LOADING,
+        icon: 'loading',
+        duration: 10000
+      })
+    }
+  },
+  globalData: {
     appName: 'Azure服务器仪表盘',
-    version: '0.0.2',
+    version: '0.0.8',
     config: {
       status: {
         title: '服务器仪表盘',
@@ -30,9 +77,12 @@ App({
       },
       icon: {
         baseURL: 'https://wacnppe.blob.core.chinacloudapi.cn/marketing-resource/media/images/shd/'
+      },
+      serviceName: {
+        api: 'https://wacnppe.blob.core.chinacloudapi.cn/marketing-resource/Content/support/services.json'
       }
     },
-    msg:{
+    msg: {
       LOADING: '努力加载中',
       SERVICE_IS_OK: '服务正常运行',
       ALL_SERVICE_IS_OK: '所有服务正常',

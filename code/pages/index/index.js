@@ -20,7 +20,7 @@ Page({
   },
   checkStatus: function () {
     var that = this;
-    this.loading();
+    app.loading();
     wx.request({
       url: app.globalData.config.status.api,
       data: {},
@@ -34,12 +34,12 @@ Page({
       },
       fail: function () {
         // fail
-
+        
         console.log('fail');
       },
       complete: function () {
         // complete
-        wx.hideToast();
+        app.loading('hide');
       }
     })
   },
@@ -56,21 +56,15 @@ Page({
       areaData.china = app.globalData.msg.ALL_SERVICE_IS_OK;
     } else {
       incedentsData.title = '';
-      incedentsData.area = '';
-      incedentsData.desctiption = '';
+      areaData.chinaNorth = '';
+      areaData.chinaEast = '';
+      areaData.china = '';
     }
     this.setData({
       incidents: incedentsData,
       area: areaData,
       updateTime: lastUpdateTime
     });
-  },
-  loading: function () {
-    wx.showToast({
-      title: app.globalData.msg.LOADING,
-      icon: 'loading',
-      duration: 10000
-    })
   },
   onShareAppMessage: function () {
     return {

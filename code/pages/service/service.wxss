@@ -30,12 +30,12 @@
     background-color: #e3e3e3;
 }
 
-.table .level2{
-    padding-left: 30rpx;
+.table .level2 .tl{
+    text-indent: 30rpx;
 }
 
-.table .level3{
-    padding-left: 60rpx;
+.table .level3 .tl{
+    text-indent: 60rpx;
 }
 
 .table .level2 .td{

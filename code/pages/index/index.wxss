@@ -55,3 +55,7 @@ page{
     padding-top: 20rpx;
     padding-bottom: 20rpx;    
 }
+
+.status-all_service_hover{
+    color: #03a9f4;
+}

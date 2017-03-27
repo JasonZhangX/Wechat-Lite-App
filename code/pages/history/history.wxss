@@ -4,22 +4,40 @@ page{
 .history-item{
    padding-left:20rpx;
    padding-right: 20rpx;
-   padding-top: 25rpx;
-   padding-bottom: 25rpx;
 }
 .history-item .date{
     flex: 1;
     text-align: center;
     line-height: 1rem;
     padding-left: 20rpx;
+   padding-top: 25rpx;
+   padding-bottom: 25rpx;    
 }
 .history-item .date text{
     font-size: 0.7rem;
 }
 .history-item .content{
+    position: relative;
     flex: 5;
-    padding-left: 80rpx;
+    margin-left: 30rpx;
+    padding-left: 50rpx;
+    border-left: 1px solid #CCC;
+   padding-top: 25rpx;
+   padding-bottom: 25rpx;    
 }
+
+.history-item .content:after{
+    content: '';
+    background-color: #CCC;
+    width: 25rpx;
+    height: 25rpx;
+    display: block;
+    position: absolute;
+    top: 40%;
+    left: -7px;
+    border-radius: 25px;
+}
+
 .history-item .content text{
     display: block;
 }

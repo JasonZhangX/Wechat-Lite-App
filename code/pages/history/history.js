@@ -6,14 +6,14 @@ Page({
         path: app.globalData.config.history.path,
     },
     onLoad: function () {
-
+        
     },
     onShow: function () {
         this.list();
     },
     list: function () {
         var that = this;
-        this.loading();
+        app.loading();
         wx.request({
             url: app.globalData.config.history.api,
             data: {},
@@ -31,7 +31,7 @@ Page({
             },
             complete: function () {
                 // complete
-                wx.hideToast();
+                app.loading('hide');
             }
         })
     },
@@ -62,13 +62,6 @@ Page({
         wx.navigateTo({
             url: '../history-detail/history-detail?id=' + detailId
         });
-    },
-    loading: function () {
-        wx.showToast({
-            title: app.globalData.msg.LOADING,
-            icon: 'loading',
-            duration: 10000
-        })
     },
     onShareAppMessage: function () {
         return {

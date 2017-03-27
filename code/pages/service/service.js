@@ -9,7 +9,7 @@ Page({
     },
     list: function () {
         var that = this;
-        this.loading();
+        app.loading();
         wx.request({
             url: app.globalData.config.service.api,
             data: {},
@@ -27,20 +27,41 @@ Page({
             },
             complete: function () {
                 // complete
-                wx.hideToast();
+                app.loading('hide');
             }
         })
     },
     formateData: function (res) {
         this.setData(res);
         console.log(this.data);
-    },
-    loading: function () {
-        wx.showToast({
-            title: app.globalData.msg.LOADING,
-            icon: 'loading',
-            duration: 10000
-        })
+        //Get all service slug
+        // var servicNameData = {};
+        // this.data.shd.category.forEach(function (value, index) {
+        //     if (value.service.length > 1) {
+        //         value.service.forEach(function (cValue, cIndex) {
+        //             if (cValue['inner-services'] !== undefined) {
+        //                 console.log(cValue['inner-services'].service.length);
+        //                 if (cValue['inner-services'].service.length) {
+        //                     cValue['inner-services'].service.forEach(function (ccValue, ccIndex) {
+        //                         servicNameData[ccValue.slug] = ccValue.name;
+        //                     })
+        //                 } else {
+        //                     servicNameData[cValue['inner-services'].service.slug] = cValue['inner-services'].service.name;
+        //                 }
+        //             } else {
+        //                 servicNameData[cValue.slug] = cValue.name;
+        //             }
+        //         });
+        //     } else {
+        //         if (value.service.slug !== undefined) {
+        //             servicNameData[value.service.slug] = value.service.name;
+        //         }
+        //     }
+
+        // });
+        // console.log(JSON.stringify(servicNameData));
+        // app.globalData.serviceName = servicNameData;
+
     },
     onShareAppMessage: function () {
         return {

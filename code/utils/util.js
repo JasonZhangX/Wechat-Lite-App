@@ -62,9 +62,20 @@ var formatArea = function (apiArea) {
   return area;
 }
 
+var formatStatus = function(status){
+    var sMap = {
+    'good': app.globalData.msg['GOOD'],
+    'warning': app.globalData.msg['WARNING'],
+    'error': app.globalData.msg['ERROR'],
+    'information': app.globalData.msg['INFORMATION']
+  }
+  return sMap[status];
+}
+
 module.exports = {
   formatTime: formatTime,
   printf: printf,
   formatTimeStr: formatTimeStr,
-  formatArea: formatArea
+  formatArea: formatArea,
+  formatStatus: formatStatus
 }
