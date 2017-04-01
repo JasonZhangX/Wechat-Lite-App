@@ -19,7 +19,7 @@ Page({
     //this.checkStatus();
   },
   checkStatus: function () {
-    var that = this;
+    var self = this;
     app.loading();
     wx.request({
       url: app.globalData.config.status.api,
@@ -29,12 +29,15 @@ Page({
       success: function (res) {
         // success
         console.log(res);
-        that.formateData(res);
+        self.formateData(res);
         console.log('success');
       },
       fail: function () {
-        // fail
-        
+        app.popup({
+          title: app.globalData.msg.NETWORK_ERROR,
+          content: app.globalData.msg.RETRY_INFO,
+          callback: self.checkStatus
+        });
         console.log('fail');
       },
       complete: function () {
@@ -44,21 +47,24 @@ Page({
     })
   },
   formateData: function (res) {
+    if (res.data.status === undefined) {
+      return;
+    }
     var lastUpdateTime = AW.formatTimeStr(res.data.lastupdated);
-    var incedentsData = {
-      status: res.data.status
-    };
+    var incedentsData = {};
     var areaData = {};
     if (res.data.status === 'OK' && res.data.incidents.length === 0) {
       incedentsData.title = app.globalData.msg.SERVICE_IS_OK;
+      incedentsData.statusICON = AW.formatStatusICON(res.data.status, 128);
       areaData.chinaNorth = app.globalData.msg.ALL_SERVICE_IS_OK;
       areaData.chinaEast = app.globalData.msg.ALL_SERVICE_IS_OK;
       areaData.china = app.globalData.msg.ALL_SERVICE_IS_OK;
     } else {
       incedentsData.title = '';
-      areaData.chinaNorth = '';
-      areaData.chinaEast = '';
-      areaData.china = '';
+      incedentsData.statusICON = AW.formatStatusICON(res.data.status, 128);
+      areaData.chinaNorth = app.globalData.msg.ALL_SERVICE_IS_OK;
+      areaData.chinaEast = app.globalData.msg.ALL_SERVICE_IS_OK;
+      areaData.china = app.globalData.msg.ALL_SERVICE_IS_OK;
     }
     this.setData({
       incidents: incedentsData,
