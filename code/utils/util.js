@@ -62,7 +62,7 @@ var formatArea = function (apiArea) {
   return area;
 }
 
-var formatStatus = function(status){
+var formatStatusStr = function(status){
     var sMap = {
     'good': app.globalData.msg['GOOD'],
     'warning': app.globalData.msg['WARNING'],
@@ -72,10 +72,37 @@ var formatStatus = function(status){
   return sMap[status];
 }
 
+var formatStatusICON = function(status, size){
+    var sMap = {
+    'good': {
+      type:'success',
+      size: size
+    },
+    'OK': {
+      type:'success',
+      size: size
+    },
+    'warning': {
+      type:'safe_warn',
+      size: size
+    },
+    'error': {
+      type:'warn',
+      size: size
+    },
+    'information': {
+      type:'info',
+      size: size
+    }
+  }
+  return sMap[status];
+}
+
 module.exports = {
   formatTime: formatTime,
   printf: printf,
   formatTimeStr: formatTimeStr,
   formatArea: formatArea,
-  formatStatus: formatStatus
+  formatStatusStr: formatStatusStr,
+  formatStatusICON: formatStatusICON
 }

@@ -38,6 +38,24 @@ App({
       }
     })
   },
+  popup: function(oParam){
+    oParam.title = oParam.title || '';
+    oParam.content = oParam.content || '';
+    oParam.callback = oParam.callback || function(){};
+    oParam.showCancel = oParam.showCancel || true;
+    wx.showModal({
+      title: oParam.title,
+      content: oParam.content,
+      showCancel: oParam.showCancel,
+      confirmColor: '#03a9f4',
+      success: function(res) {
+        if (res.confirm) {
+          oParam.callback && oParam.callback();
+          console.log('用户点击确定')
+        }
+      }
+    })    
+  },
   loading: function (param) {
     var self = this;
     if (param === 'hide') {
@@ -92,7 +110,9 @@ App({
       GOOD: '服务正常',
       WARNING: '性能警告',
       ERROR: '服务中断',
-      INFORMATION: '附加信息'
+      INFORMATION: '附加信息',
+      NETWORK_ERROR: '服务器无响应',
+      RETRY_INFO: '是否尝试重新连接？'
     }
   }
 })

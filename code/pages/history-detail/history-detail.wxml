@@ -18,7 +18,7 @@
         结束时间：<text>{{history.endDate}}</text>
     </view> 
     <view class="status">
-        事件类型：<text>{{history.status}}</text>
+        事件类型：<icon type="{{history.statusICON.type}}" size="{{history.statusICON.size}}"/><text>{{history.status}}</text>
     </view>           
     <view class="area">
         影响区域：<text>{{history.area}}</text>
