@@ -1,4 +1,5 @@
 var app = getApp();
+var AW = require('../../utils/util');
 Page({
     data: {
         title: app.globalData.config.service.title,
@@ -32,6 +33,28 @@ Page({
         })
     },
     formateData: function (res) {
+        var incidentsData = getCurrentPages()[0].data.incidents.incidentList;
+        if(incidentsData){
+            res.shd.category.forEach(function(level1Item){
+                if(level1Item.service.length > 0){
+                    level1Item.service.forEach(function(level2Item){
+                        if(AW.isIncidentService(level2Item.slug, incidentsData)){
+                            var regionsData = AW.isIncidentService(level2Item.slug, incidentsData);
+                            for(var i in regionsData){
+                                level2Item.regions[i] = regionsData[i];
+                            }
+                            console.log(level2Item);    
+                        };
+                    });
+                }else{
+                    if(AW.isIncidentService(level1Item.slug, incidentsData)){
+                        console.log(level1Item);      
+                    }
+                }
+
+            });
+        }
+
         this.setData(res);
         console.log(this.data);
         //Get all service slug

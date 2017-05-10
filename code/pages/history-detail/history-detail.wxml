@@ -11,17 +11,24 @@
     <view class="title">
         <text>{{history.title}}</text>
     </view>   
-    <view class="startDate">
-        开始时间：<text>{{history.startDate}}</text>
+    <view class="startDate form-group">
+        <view class="form-label">开始时间：</view>
+        <view class="form-content">{{history.startDate}}</view>
     </view>     
-    <view class="endDate">
-        结束时间：<text>{{history.endDate}}</text>
+    <view class="endDate form-group">
+        <view class="form-label">结束时间：</view>
+        <view class="form-content">{{history.endDate}}</view>
     </view> 
-    <view class="status">
-        事件类型：<icon type="{{history.statusICON.type}}" size="{{history.statusICON.size}}"/><text>{{history.status}}</text>
+    <view class="status form-group">
+        <view class="form-label">事件类型：</view>
+        <view class="icon-container">
+            <icon type="{{history.statusICON.type}}" size="{{history.statusICON.size}}"/><text>{{history.status}}</text>
+        </view>
+        
     </view>           
-    <view class="area">
-        影响区域：<text>{{history.area}}</text>
+    <view class="area form-group">
+        <view class="form-label">影响区域：</view>
+        <view class="form-content">{{history.area}}</view>
     </view>
     <view class="description">
         <text>{{history.description}}</text>

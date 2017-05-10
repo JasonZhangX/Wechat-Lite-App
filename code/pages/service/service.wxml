@@ -14,18 +14,45 @@
         <view class="row level2" data-slug="{{level2Item.slug}}">
           <view class="td tl">{{level2Item.name}}</view>
           <view class="td tr">
-            <block wx:if="{{level2Item.regions.global}}">
+            <block wx:if="{{level2Item.regions.global == 'true'}}">
               <icon type="success" size="24" />
+            </block>
+            <block wx:elif="{{level2Item.regions.global == 'information'}}">
+              <icon type="info" size="24" />
+            </block>
+            <block wx:elif="{{level2Item.regions.global == 'error'}}">
+              <icon type="warn" size="24" />
+            </block>
+            <block wx:elif="{{level2Item.regions.global == 'warning'}}">
+              <icon type="info" size="24" color="#FFE100"/>
             </block>
           </view>
           <view class="td tr">
-            <block wx:if="{{level2Item.regions['china-north']}}">
+            <block wx:if="{{level2Item.regions['china-north'] == 'true'}}">
               <icon type="success" size="24" />
+            </block>
+            <block wx:elif="{{level2Item.regions['china-north'] == 'information'}}">
+              <icon type="info" size="24" />
+            </block>
+            <block wx:elif="{{level2Item.regions['china-north'] == 'error'}}">
+              <icon type="warn" size="24" />
+            </block>
+            <block wx:elif="{{level2Item.regions['china-north'] == 'warning'}}">
+              <icon type="info" size="24" color="#FFE100"/>
             </block>
           </view>
           <view class="td tr">
-            <block wx:if="{{level2Item.regions['china-east']}}">
+            <block wx:if="{{level2Item.regions['china-east'] == 'true'}}">
               <icon type="success" size="24" />
+            </block>
+            <block wx:elif="{{level2Item.regions['china-east'] == 'information'}}">
+              <icon type="info" size="24" />
+            </block>
+            <block wx:elif="{{level2Item.regions['china-east'] == 'error'}}">
+              <icon type="warn" size="24" />
+            </block>
+            <block wx:elif="{{level2Item.regions['china-east'] == 'warning'}}">
+              <icon type="info" size="24" color="#FFE100"/>
             </block>
           </view>
         </view>
@@ -35,18 +62,45 @@
               <view class="row level3" data-slug="{{level3Item.slug}}">
                 <view class="td tl">{{level3Item.name}}</view>
                 <view class="td tr">
-                  <block wx:if="{{level2Item.regions.global}}">
+                  <block wx:if="{{level2Item.regions.global == 'true'}}">
                     <icon type="success" size="24" />
+                  </block>
+                  <block wx:elif="{{level2Item.regions.global == 'information'}}">
+                    <icon type="info" size="24" />
+                  </block>
+                  <block wx:elif="{{level2Item.regions.global == 'error'}}">
+                    <icon type="warn" size="24" />
+                  </block>
+                  <block wx:elif="{{level2Item.regions.global == 'warning'}}">
+                    <icon type="info" size="24" color="#FFE100"/>
                   </block>
                 </view>
                 <view class="td tr">
-                  <block wx:if="{{level2Item.regions['china-north']}}">
+                  <block wx:if="{{level2Item.regions['china-north'] == 'true'}}">
                     <icon type="success" size="24" />
+                  </block>
+                  <block wx:elif="{{level2Item.regions['china-north'] == 'information'}}">
+                    <icon type="info" size="24" />
+                  </block>
+                  <block wx:elif="{{level2Item.regions['china-north'] == 'error'}}">
+                    <icon type="warn" size="24" />
+                  </block>
+                  <block wx:elif="{{level2Item.regions['china-north'] == 'warning'}}">
+                    <icon type="info" size="24" color="#FFE100"/>
                   </block>
                 </view>
                 <view class="td tr">
-                  <block wx:if="{{level2Item.regions['china-east']}}">
+                  <block wx:if="{{level2Item.regions['china-east'] == 'true'}}">
                     <icon type="success" size="24" />
+                  </block>
+                  <block wx:elif="{{level2Item.regions['china-east'] == 'information'}}">
+                    <icon type="info" size="24" />
+                  </block>
+                  <block wx:elif="{{level2Item.regions['china-east'] == 'error'}}">
+                    <icon type="warn" size="24" />
+                  </block>
+                  <block wx:elif="{{level2Item.regions['china-east'] == 'warning'}}">
+                    <icon type="info" size="24" color="#FFE100"/>
                   </block>
                 </view>
               </view>
@@ -56,18 +110,45 @@
             <view class="row level3" data-slug="{{level2Item['inner-services'].service.slug}}">
               <view class="td tl">{{level2Item['inner-services'].service.name}}</view>
               <view class="td tr">
-                <block wx:if="{{level2Item.regions.global}}">
+                <block wx:if="{{level2Item.regions.global == 'true'}}">
                   <icon type="success" size="24" />
+                </block>
+                <block wx:elif="{{level2Item.regions.global == 'information'}}">
+                  <icon type="info" size="24" />
+                </block>
+                <block wx:elif="{{level2Item.regions.global == 'error'}}">
+                  <icon type="warn" size="24" />
+                </block>
+                <block wx:elif="{{level2Item.regions.global == 'warning'}}">
+                  <icon type="info" size="24" color="#FFE100"/>
                 </block>
               </view>
               <view class="td tr">
-                <block wx:if="{{level2Item.regions['china-north']}}">
+                <block wx:if="{{level2Item.regions['china-north'] == 'true'}}">
                   <icon type="success" size="24" />
+                </block>
+                <block wx:elif="{{level2Item.regions['china-north'] == 'information'}}">
+                  <icon type="info" size="24" />
+                </block>
+                <block wx:elif="{{level2Item.regions['china-north'] == 'error'}}">
+                  <icon type="warn" size="24" />
+                </block>
+                <block wx:elif="{{level2Item.regions['china-north'] == 'warning'}}">
+                  <icon type="info" size="24" color="#FFE100"/>
                 </block>
               </view>
               <view class="td tr">
-                <block wx:if="{{level2Item.regions['china-east']}}">
+                <block wx:if="{{level2Item.regions['china-east'] == 'true'}}">
                   <icon type="success" size="24" />
+                </block>
+                <block wx:elif="{{level2Item.regions['china-east'] == 'information'}}">
+                  <icon type="info" size="24" />
+                </block>
+                <block wx:elif="{{level2Item.regions['china-east'] == 'error'}}">
+                  <icon type="warn" size="24" />
+                </block>
+                <block wx:elif="{{level2Item.regions['china-east'] == 'warning'}}">
+                  <icon type="info" size="24" color="#FFE100"/>
                 </block>
               </view>
             </view>
@@ -79,18 +160,45 @@
       <view class="row level2" data-slug="{{level1Item.service.slug}}">
         <view class="td tl">{{level1Item.service.name}}</view>
         <view class="td tr">
-          <block wx:if="{{level1Item.service.regions.global}}">
+          <block wx:if="{{level1Item.service.regions.global == 'true'}}">
             <icon type="success" size="24" />
+          </block>
+          <block wx:elif="{{level1Item.service.regions.global == 'information'}}">
+            <icon type="info" size="24" />
+          </block>
+          <block wx:elif="{{level1Item.service.regions.global == 'error'}}">
+            <icon type="warn" size="24" />
+          </block>
+          <block wx:elif="{{level1Item.service.regions.global == 'warning'}}">
+            <icon type="info" size="24" color="#FFE100"/>
           </block>
         </view>
         <view class="td tr">
-          <block wx:if="{{level1Item.service.regions['china-north']}}">
+          <block wx:if="{{level1Item.service.regions['china-north'] == 'true'}}">
             <icon type="success" size="24" />
+          </block>
+          <block wx:elif="{{level1Item.service.regions['china-north'] == 'information'}}">
+            <icon type="info" size="24" />
+          </block>
+          <block wx:elif="{{level1Item.service.regions['china-north'] == 'error'}}">
+            <icon type="warn" size="24" />
+          </block>
+          <block wx:elif="{{level1Item.service.regions['china-north'] == 'warning'}}">
+            <icon type="info" size="24" color="#FFE100"/>
           </block>
         </view>
         <view class="td tr">
-          <block wx:if="{{level1Item.service.regions['china-east']}}">
+          <block wx:if="{{level1Item.service.regions['china-east'] == 'true'}}">
             <icon type="success" size="24" />
+          </block>
+          <block wx:elif="{{level1Item.service.regions['china-east'] == 'information'}}">
+            <icon type="info" size="24" />
+          </block>
+          <block wx:elif="{{level1Item.service.regions['china-east'] == 'error'}}">
+            <icon type="warn" size="24" />
+          </block>
+          <block wx:elif="{{level1Item.service.regions['china-east'] == 'warning'}}">
+            <icon type="info" size="24" color="#FFE100"/>
           </block>
         </view>
       </view>

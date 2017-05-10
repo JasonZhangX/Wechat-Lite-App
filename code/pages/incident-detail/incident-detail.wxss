@@ -1,0 +1,76 @@
+page{
+    color: #323a45;
+}
+.service{
+    padding: 50rpx 80rpx 30rpx;
+    text-align: center;
+    background: linear-gradient(#fff, #f2f2f2);
+}
+.service image{
+    width: 256rpx;
+    height: 256rpx;
+}
+.service icon{
+    text-align: center;
+}
+.service text{
+    text-align: center;    
+}
+.incident-detail{
+    padding: 50rpx 80rpx;
+    
+}
+.incident-detail .title{
+    font-size: 1.2rem;
+    margin-bottom: 15rpx;
+}
+.incident-detail .form-group{
+    font-size: .8rem;
+    padding-top: 10rpx;
+    padding-bottom: 10rpx;
+    border-bottom: 1px dotted #F0F0F0;
+    overflow: hidden;
+    clear: both;
+}
+.incident-detail .form-label{
+    float: left;
+    font-weight: bold;
+    color: #666666;
+}
+.incident-detail .form-content{
+    float: left;
+    color: #666666;
+}
+.incident-detail .status{
+    font-size: .8rem;   
+}
+.incident-detail .status .icon-container{
+    float: left;
+}
+.incident-detail .status .icon-container icon{
+    display: block;
+    float: left;
+    margin-right: 10rpx;
+}
+.incident-detail .status icon-container text{
+    display: block;
+    float: left;
+    color: #666666;
+}
+.incident-detail .startDate{
+    font-size: .8rem;
+}
+.incident-detail .endDate{
+    font-size: .8rem;
+}
+.incident-detail .area{
+    font-size: .8rem;
+    margin-bottom: 15rpx;
+    
+}
+.incident-detail .description{
+    margin-top: 15rpx;
+    font-size: .75rem;
+    line-height: 1.2rem;
+    color: #666666;
+}

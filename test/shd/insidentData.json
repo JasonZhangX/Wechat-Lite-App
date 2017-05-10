@@ -1,0 +1,53 @@
+{
+	"lastupdated": "2017-04-07T06:47:32.869Z",
+	"status": "information",
+	"coreplatform": "information",
+	"popularservices": "information",
+	"geoalerts": [{
+		"geo": "china",
+		"status": "information"
+	}],
+	"incidents": [{
+		"id": "613652837",
+		"title": "Virtual Machines - China East",
+		"startdate": "2017-04-07T05:56:06.335Z",
+		"impacted": [{
+			"service": "virtual-machines",
+			"regions": ["china-east"]
+		}],
+		"status": "information",
+		"state": "active",
+		"updates": [{
+			"description": "虚拟机功能在中国东部地区出现问题，我们正在积极调查该问题。我们之后会公布更多信息并及时告知问题的进展，同时对给您带来的不便深表歉意。 An alert for Virtual Machines in China East is being investigated. More information will be provided as it is known.",
+			"lastupdated": "2017-04-07T05:56:06.335Z"
+		}]
+	}, {
+		"id": "613652837",
+		"title": "SQL Database - China East And China North",
+		"startdate": "2017-04-07T04:18:07.336Z",
+		"impacted": [{
+			"service": "sql-database",
+			"regions": ["china-east", "china-north"]
+		}],
+		"status": "information",
+		"state": "active",
+		"updates": [{
+			"description": "开始时间:从北京时间2017年4月6日16:00开始，部分中国东部和中国北部的客户在使用SQL数据库时可能会遇到连接问题。新建连接到已存在的数据库可能会报错或者超时，已存在的连接可能会中止。工程师正在执行一个全面的解决方案。我们将在4小时之内或依具体情况向您更新。Starting at 16:00 CST on 06 Apr 2017, a limited subset of customers using SQL Database in China North and China East may experience issues accessing services. New connections to existing databases in this region may result in an error or timeout, and existing connections may have been terminated. Some customers should see improvements. An extended mitigation process is currently in place. The next update will be provided in 4 hours, or as events warrant.",
+			"lastupdated": "2017-04-07T04:18:07.336Z"
+		}]
+	}, {
+		"id": "613652837",
+		"title": "Azure Active Directory - China East and China North",
+		"startdate": "2017-04-07T05:59:24.250Z",
+		"impacted": [{
+			"service": "active-directory",
+			"regions": ["china-east", "china-north"]
+		}],
+		"status": "information",
+		"state": "active",
+		"updates": [{
+			"description": "开始时间:从北京时间2017年4月6日16:00开始,部分中国东部和中国北部使用Azure活动目录的客户在经典门户网站(https://manage.windowsazure.cn)上连接该地区的资源时可能会遇到故障或收到报错。工程师已经发现该问题并在积极处理。下一次更新将会在2小时之内或者视具体情况而定。Starting at approximately 16:00 CST on 06 Apr 2017 a subset of customers using Azure Active Directory in China East and China North may intermittently experience difficulties or failure notifications when connecting to resources hosted in this region via the Classic portal (https://manage.windowsazure.cn). Some customers will likely see improvements. Engineers are continuing to perform multiple workstreams to mitigate the issue. The next update will be provided in 2 hours, or as events warrant. ",
+			"lastupdated": "2017-04-07T05:59:24.250Z"
+		}]
+	}]
+}

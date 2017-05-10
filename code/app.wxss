@@ -27,3 +27,15 @@
 .link_hover{
   color: #03a9f4;
 }
+
+.overflow-text-3line{
+  overflow : hidden;
+  height: 120rpx;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.text-center{
+  text-align: center;
+}

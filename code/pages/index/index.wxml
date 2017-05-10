@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="full-height flex-container_center">
+<view class="flex-container_center {{pageStle}}">
   <view class="flex-item flex-container_middle">
       <view class="flex-item status-info">
         <block wx:if="{{incidents.status == 'OK'}}">
@@ -7,18 +7,72 @@
           <text>{{incidents.title}}</text>
         </block>
         <block wx:else>
-          <icon type="{{incidents.statusICON.type}}" size="{{incidents.statusICON.size}}" />
-          <text class="service-name">{{incidents.title}}</text>
-          <text class="area">{{incidents.area}}</text>
-          <text class="desctiption">{{incidents.desctiption}}</text>       
+          <view class="incidents-container">
+            <block wx:for="{{incidents.incidentList}}" wx:for-item="incidentItem" wx:key="incidentItem.index">
+              <view class="incidents-item {{incidentItem.status}}" bindtap="viewDetail" data-id="{{incidentItem.id}}">
+                <image mode="widthFix" src="{{incidentItem.icon}}"></image>
+                <text class="service-name">{{incidentItem.serviceName}}</text>
+                <text class="date">{{incidentItem.startDate}}</text>
+                <text class="area">{{incidentItem.area}}</text>
+                <text class="desctiption overflow-text-3line">{{incidentItem.summary}}</text>  
+              </view>
+            </block>
+          </view>
         </block>
       </view>
   </view>
   <view class="status-area">
     <view class="area-detail">
-      <text>中国北区:{{area.chinaNorth}}</text>
-      <text>中国东区:{{area.chinaEast}}</text>
-      <text>中国地区:{{area.china}}</text>
+      <view class="flex-container">
+        <view class="flex-item">
+          <view class="area-title">中国北区</view>
+          <block wx:if="{{area.chinaNorth.length > 0}}">
+            <view class="area-data">
+              <block wx:for="{{area.chinaNorth}}" wx:for-item="areaItem" wx:key="areaItem.index">
+                <view class="area-data-item">
+                  <view class="area-service_name">{{areaItem.serviceName}}</view>
+                  <view class="area-service_status">{{areaItem.statusText}}</view>
+                </view>
+              </block>
+            </view>
+          </block>
+          <block wx:else>
+            <view class="area-data">所有服务正常</view>
+          </block>
+        </view>
+        <view class="flex-item">
+          <view class="area-title">中国东区</view>
+          <block wx:if="{{area.chinaEast.length > 0}}">
+            <view class="area-data">
+              <block wx:for="{{area.chinaEast}}" wx:for-item="areaItem" wx:key="areaItem.index">
+                <view class="area-data-item">
+                  <view class="area-service_name">{{areaItem.serviceName}}</view>
+                  <view class="area-service_status">{{areaItem.statusText}}</view>
+                </view>
+              </block>
+            </view>
+          </block>
+          <block wx:else>
+            <view class="area-data">所有服务正常</view>
+          </block>
+        </view>
+        <view class="flex-item">
+          <view class="area-title">中国地区</view>
+          <block wx:if="{{area.china.length > 0}}">
+            <view class="area-data">
+              <block wx:for="{{area.china}}" wx:for-item="areaItem" wx:key="areaItem.index">
+                <view class="area-data-item">
+                  <view class="area-service_name">{{areaItem.serviceName}}</view>
+                  <view class="area-service_status">{{areaItem.statusText}}</view>
+                </view>
+              </block>
+            </view>
+          </block>
+          <block wx:else>
+            <view class="area-data">所有服务正常</view>
+          </block>
+        </view>      
+      </view>
     </view>
     <view class="update-time">
       <text>更新时间：{{updateTime}}</text>

@@ -2,6 +2,10 @@
 page{
     color: #323a45;
 }
+.flex-container_center{
+    background: #f2f2f2;
+}
+
 /*status information*/
 .status-info{
     text-align: center;
@@ -29,31 +33,114 @@ page{
     text-align: left;
     line-height: 1.2rem;
 }
+.status-info .incidents-container{
+    padding-top: 40rpx;
+    padding-bottom: 30rpx;
+}
+
+.status-info .incidents-container .incidents-item{ 
+    background-color: #FFF;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 30rpx;
+    padding-bottom: 40rpx;
+    padding-top: 40rpx;
+    border-top: 5rpx solid #03a9f4;
+}
+.status-info .incidents-container .information{
+    border-color: #03a9f4;
+}
+.status-info .incidents-container .warning{
+    border-color: #FFE100;
+}
+.status-info .incidents-container .error{
+    border-color: #c71c22;
+}
+
+.status-info .incidents-container .incidents-item image{
+    width: 256rpx;
+    height: 256rpx;
+}
+
+.status-info .incidents-container .incidents-item .date{
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.status-info .incidents-container .incidents-item .area{
+    font-size: 0.8rem;
+    margin-top: 10rpx;
+}
+
+.status-info .incidents-container .incidents-item .desctiption{
+    font-size: 0.75rem;
+    color: #666;
+}
+
 /*status area*/
 .status-area{
-    margin-top: 40rpx;
-    margin-bottom: 50rpx;    
+    width: 90%;
+    padding-top: 30rpx;
+    padding-bottom: 20rpx;  
+    background-color: #FFF;
+    /*border-top: 1px dashed #CCC;
+    border-bottom: 1px dashed #CCC;*/
 }
 .status-area .area-detail{
-    margin-bottom: 10rpx;
+    margin-bottom: 20rpx;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
 }
-.status-area .area-detail text{
-    display: block;
+.status-area .area-detail .flex-item{
+    border-right: 1px solid #CCC;
+}
+.status-area .area-detail .flex-item:last-child{
+    border-right: none;
+}
+.status-area .area-detail .area-title{
     font-size: 0.8rem;
     text-align: center;
-    line-height: 1.6em;
+    font-weight: bold;
+    height: 50rpx;
+    line-height: 50rpx;
+    margin-bottom: 10rpx;
+
+}
+.status-area .area-detail .area-data{
+    padding-left: 15rpx;
+    padding-right: 15rpx;
+    font-size: 0.7rem;
+    text-align: center;    
+}
+.status-area .area-detail .area-data .area-data-item{
+    padding-bottom: 6rpx;
+    padding-top: 6rpx;
+}
+.status-area .area-detail .area-data .area-service_name{
+    font-weight: bold;
 }
 .status-area .update-time text{
+    display: block;
     font-size: 0.7rem;
+    text-align: center;
+    color: #666;
 }
 /*bottom action*/
 .status-all_service{
-    margin-bottom: 40rpx;
+    /*margin-bottom: 40rpx;*/
+    width: 90%;
 }
 .status-all_service navigator{
-    font-size: 1rem;
-    padding-top: 20rpx;
-    padding-bottom: 20rpx;    
+    display: block;
+    font-size: .8rem;
+    margin-top: 30rpx;
+    margin-bottom: 40rpx;
+    color: #FFF;
+    background-color: #03a9f4;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    border-radius: 10rpx;
 }
 
 .status-all_service_hover{

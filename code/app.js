@@ -3,12 +3,13 @@ App({
   onLaunch: function () {
     this.getServicesName();
   },
-  getServicesName: function () {
+  getServicesName: function (callback) {
     var self = this;
     this.sendRequest({
       rUrl: self.globalData.config.serviceName.api,
       formateData: function (servicNameData) {
         self.globalData.serviceName = servicNameData;
+        callback && callback(servicNameData);
         console.log(self.globalData.serviceName);
       }
     });
@@ -42,7 +43,7 @@ App({
     oParam.title = oParam.title || '';
     oParam.content = oParam.content || '';
     oParam.callback = oParam.callback || function(){};
-    oParam.showCancel = oParam.showCancel || true;
+    oParam.showCancel = oParam.showCancel !== false;
     wx.showModal({
       title: oParam.title,
       content: oParam.content,
@@ -70,12 +71,13 @@ App({
   },
   globalData: {
     appName: 'Azure服务器仪表盘',
-    version: '0.0.8',
+    version: '0.0.9',
     config: {
       status: {
         title: '服务器仪表盘',
         path: 'pages/index/index',
-        api: 'https://www.windowsazurestatus.cn/api/incidents?api-version=1.0',
+        //api: 'https://www.azure.cn/support/status-api?api=incidents',
+        api: 'http://wacnppe.blob.core.chinacloudapi.cn/marketing-resource/Content/support/shd/insidentData.json',
         interval: 120000
       },
       history: {
@@ -87,18 +89,24 @@ App({
       service: {
         title: '所有服务',
         path: 'pages/service/service',
-        api: 'https://wacnppe.blob.core.chinacloudapi.cn/marketing-resource/Content/support/shd.json'
+        api: 'https://wacnppe.blob.core.chinacloudapi.cn/marketing-resource/Content/support/shd/shd.json'
       },
       historyDetail: {
         title: '历史详情',
         path: 'pages/history-detail/history-detail',
       },
+      incidentDetail: {
+        title: '事件详情',
+        path: 'pages/history-detail/incident-detail',
+      },
       icon: {
-        baseURL: 'https://wacnppe.blob.core.chinacloudapi.cn/marketing-resource/media/images/shd/'
+        baseURL: 'https://wacnppe.blob.core.chinacloudapi.cn/marketing-resource/media/images/shd/',
+        defaultURL: 'https://wacnppe.blob.core.chinacloudapi.cn/marketing-resource/media/images/shd/defaultIcon.png',
       },
       serviceName: {
-        api: 'https://wacnppe.blob.core.chinacloudapi.cn/marketing-resource/Content/support/services.json'
-      }
+        api: 'https://wacnppe.blob.core.chinacloudapi.cn/marketing-resource/Content/support/shd/services.json'
+      },
+      maxRetryTimes: 3
     },
     msg: {
       LOADING: '努力加载中',
@@ -111,7 +119,7 @@ App({
       WARNING: '性能警告',
       ERROR: '服务中断',
       INFORMATION: '附加信息',
-      NETWORK_ERROR: '服务器无响应',
+      NETWORK_ERROR: '状态服务器无响应',
       RETRY_INFO: '是否尝试重新连接？'
     }
   }

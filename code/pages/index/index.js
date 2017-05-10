@@ -1,11 +1,11 @@
 //index.js
-//获取应用实例
 var AW = require('../../utils/util');
 var app = getApp();
 Page({
   data: {
     title: app.globalData.config.status.title,
     path: app.globalData.config.status.path,
+    retryTimes: 0
   },
   init: function () {
     this.checkStatus();
@@ -32,13 +32,22 @@ Page({
         self.formateData(res);
         console.log('success');
       },
-      fail: function () {
-        app.popup({
-          title: app.globalData.msg.NETWORK_ERROR,
-          content: app.globalData.msg.RETRY_INFO,
-          callback: self.checkStatus
-        });
-        console.log('fail');
+      fail: function (error) {
+        if(self.data.retryTimes < app.globalData.config.maxRetryTimes){
+          app.popup({
+            title: app.globalData.msg.NETWORK_ERROR,
+            content: app.globalData.msg.RETRY_INFO,
+            callback: self.checkStatus
+          });
+          self.data.retryTimes++;
+        }else{
+          app.popup({
+            title: app.globalData.msg.NETWORK_ERROR,
+            showCancel: false,
+            content: error.errMsg,
+          });
+        }
+        console.log(error);
       },
       complete: function () {
         // complete
@@ -46,31 +55,90 @@ Page({
       }
     })
   },
+  viewDetail: function (event) {
+      var detailId = event.currentTarget.dataset.id;
+      wx.navigateTo({
+          url: '../incident-detail/incident-detail?id=' + detailId
+      });
+  },
   formateData: function (res) {
+    var self = this;
     if (res.data.status === undefined) {
       return;
     }
     var lastUpdateTime = AW.formatTimeStr(res.data.lastupdated);
     var incedentsData = {};
     var areaData = {};
+    var pageStle = '';
     if (res.data.status === 'OK' && res.data.incidents.length === 0) {
       incedentsData.title = app.globalData.msg.SERVICE_IS_OK;
+      incedentsData.status = res.data.status;
       incedentsData.statusICON = AW.formatStatusICON(res.data.status, 128);
-      areaData.chinaNorth = app.globalData.msg.ALL_SERVICE_IS_OK;
-      areaData.chinaEast = app.globalData.msg.ALL_SERVICE_IS_OK;
-      areaData.china = app.globalData.msg.ALL_SERVICE_IS_OK;
+      areaData.chinaNorth = [];
+      areaData.chinaEast = [];
+      areaData.china = [];
+      pageStle = 'full-height';
+      self.setData({
+        incidents: incedentsData,
+        area: areaData,
+        updateTime: lastUpdateTime,
+        pageStle: pageStle,
+      });
     } else {
-      incedentsData.title = '';
-      incedentsData.statusICON = AW.formatStatusICON(res.data.status, 128);
-      areaData.chinaNorth = app.globalData.msg.ALL_SERVICE_IS_OK;
-      areaData.chinaEast = app.globalData.msg.ALL_SERVICE_IS_OK;
-      areaData.china = app.globalData.msg.ALL_SERVICE_IS_OK;
+      app.getServicesName(function(){
+        incedentsData.incidentList = [];
+        areaData.chinaNorth = [];
+        areaData.chinaEast = [];
+        areaData.china = [];
+        res.data.incidents.forEach(function(item, index){
+          var incidentObj = {};
+          incidentObj.id = index;
+          incidentObj.status = item.status;
+          incidentObj.icon = app.globalData.config.icon.baseURL + item.impacted[0].service + '.png';
+          incidentObj.serviceName = app.globalData.serviceName[item.impacted[0].service];
+          incidentObj.serviceId = item.impacted[0].service;
+          incidentObj.startDate = AW.formatTimeStr(item.startdate);
+          incidentObj.dataMilliseconds = (new Date(item.startdate)).getTime();
+          incidentObj.area = AW.formatArea(item.impacted[0].regions);
+          incidentObj.areaId = item.impacted[0].regions;
+          if(AW.isArea('china-north', incidentObj.areaId)){
+            areaData.chinaNorth.push({
+              serviceName: incidentObj.serviceName,
+              serviceId: incidentObj.serviceId,
+              status: incidentObj.status,
+              statusText: AW.formatStatusStr(incidentObj.status),
+            });
+          }
+          if(AW.isArea('china-east', incidentObj.areaId)){
+            areaData.chinaEast.push({
+              serviceName: incidentObj.serviceName,
+              serviceId: incidentObj.serviceId,
+              status: incidentObj.status,
+              statusText: AW.formatStatusStr(incidentObj.status),
+            });
+          }
+          if(AW.isArea('global', incidentObj.areaId)){
+            areaData.china.push({
+              serviceName: incidentObj.serviceName,
+              serviceId: incidentObj.serviceId,
+              status: incidentObj.status,
+              statusText: AW.formatStatusStr(incidentObj.status),
+            });
+          }
+          incidentObj.summary = AW.limitStr(item.updates[0].description, 40);
+          incidentObj.description = item.updates[0].description;
+          incedentsData.incidentList.push(incidentObj);         
+        });
+  
+        self.setData({
+          incidents: incedentsData,
+          area: areaData,
+          updateTime: lastUpdateTime,
+          pageStle: pageStle,
+        });              
+      });
     }
-    this.setData({
-      incidents: incedentsData,
-      area: areaData,
-      updateTime: lastUpdateTime
-    });
+    
   },
   onShareAppMessage: function () {
     return {

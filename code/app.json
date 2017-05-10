@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/history/history",
     "pages/service/service",
-    "pages/history-detail/history-detail"
+    "pages/history-detail/history-detail",
+    "pages/incident-detail/incident-detail"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -17,13 +18,13 @@
     "list": [{
       "pagePath": "pages/index/index",
       "text": "状态",
-      "iconPath": "images/clock.png",
-      "selectedIconPath": "images/clock-selected.png"
+      "iconPath": "images/stats-bars.png",
+      "selectedIconPath": "images/stats-bars-selected.png"
     }, {
       "pagePath": "pages/history/history",
       "text": "历史",
-      "iconPath": "images/stats-bars.png",
-      "selectedIconPath": "images/stats-bars-selected.png"
+      "iconPath": "images/clock.png",
+      "selectedIconPath": "images/clock-selected.png"
     }]
   },
   "networkTimeout": {

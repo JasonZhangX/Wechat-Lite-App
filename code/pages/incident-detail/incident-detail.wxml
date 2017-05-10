@@ -1,0 +1,32 @@
+<view class="service">
+    <view>
+        <!--<icon type="download" size="128" color="gray"></icon>-->
+        <image mode="widthFix" src="{{incident.icon}}"></image>
+    </view>
+    <view>
+        <text>{{incident.service}}</text>
+    </view>
+</view>
+<view class="incident-detail">
+    <view class="title">
+        <text>{{incident.title}}</text>
+    </view>   
+    <view class="startDate form-group">
+        <view class="form-label">开始时间：</view>
+        <view class="form-content">{{incident.startDate}}</view>
+    </view>     
+    <view class="status form-group">
+        <view class="form-label">事件类型：</view>
+        <view class="icon-container">
+            <icon type="{{incident.statusICON.type}}" size="{{incident.statusICON.size}}"/><text>{{incident.status}}</text>
+        </view>
+        
+    </view>           
+    <view class="area form-group">
+        <view class="form-label">影响区域：</view>
+        <view class="form-content">{{incident.area}}</view>
+    </view>
+    <view class="description">
+        <text>{{incident.description}}</text>
+    </view>
+</view>

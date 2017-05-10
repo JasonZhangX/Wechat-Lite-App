@@ -47,4 +47,5 @@ page{
 .history-item .content .area{
     font-size: 0.7rem;
     margin-top: 10rpx;
+    color: #666;
 }

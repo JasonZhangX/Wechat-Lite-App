@@ -62,6 +62,34 @@ var formatArea = function (apiArea) {
   return area;
 }
 
+var isArea = function(areaId, regionsArr){
+  var hasArea = false;
+  for(var item in regionsArr){
+    if(areaId === regionsArr[item]){
+      hasArea = true;
+      break;
+    }
+  }
+  return hasArea;
+}
+
+var isIncidentService = function(slug, incidentArr){
+  var isService = false;
+  if(incidentArr.length>0){
+    for(var i=0; i<incidentArr.length; i++){
+      if(incidentArr[i].serviceId === slug){
+        var tempObj = {};
+        incidentArr[i].areaId.forEach(function(item){
+          tempObj[item] = incidentArr[i].status;
+        });
+        isService = tempObj;
+        break;
+      }
+    }  
+  }
+  return isService;
+}
+
 var formatStatusStr = function(status){
     var sMap = {
     'good': app.globalData.msg['GOOD'],
@@ -98,11 +126,35 @@ var formatStatusICON = function(status, size){
   return sMap[status];
 }
 
+var sortByPriority = function(array){
+  
+}
+
+var getServiceIcon = function(serviceId, callback){
+  var iconImgae = new Image();
+  var imageURL = app.globalData.config.icon.baseURL + serviceId + '.png';
+  iconImgae.src = imageURL;
+  iconImgae.addEventListener('load', function(){
+      callback && callback(imageURL);
+  });
+  iconImgae.addEventListener('error', function(){
+      callback && callback(app.globalData.config.icon.defaultURL);
+  });
+}
+
+var limitStr = function(textStr, limit){
+  return textStr.substring(0, limit) + '...';
+}
+
 module.exports = {
   formatTime: formatTime,
   printf: printf,
   formatTimeStr: formatTimeStr,
   formatArea: formatArea,
   formatStatusStr: formatStatusStr,
-  formatStatusICON: formatStatusICON
+  formatStatusICON: formatStatusICON,
+  sortByPriority: sortByPriority,
+  isArea: isArea,
+  isIncidentService: isIncidentService,
+  limitStr: limitStr,
 }
