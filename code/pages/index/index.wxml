@@ -25,7 +25,7 @@
     <view class="area-detail">
       <view class="flex-container">
         <view class="flex-item">
-          <view class="area-title">中国北区</view>
+          <view class="area-title">中国北部</view>
           <block wx:if="{{area.chinaNorth.length > 0}}">
             <view class="area-data">
               <block wx:for="{{area.chinaNorth}}" wx:for-item="areaItem" wx:key="areaItem.index">
@@ -41,7 +41,7 @@
           </block>
         </view>
         <view class="flex-item">
-          <view class="area-title">中国东区</view>
+          <view class="area-title">中国东部</view>
           <block wx:if="{{area.chinaEast.length > 0}}">
             <view class="area-data">
               <block wx:for="{{area.chinaEast}}" wx:for-item="areaItem" wx:key="areaItem.index">
