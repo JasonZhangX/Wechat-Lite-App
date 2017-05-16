@@ -35,7 +35,7 @@ page{
 }
 .status-info .incidents-container{
     padding-top: 40rpx;
-    padding-bottom: 30rpx;
+    /*padding-bottom: 30rpx;*/
 }
 
 .status-info .incidents-container .incidents-item{ 

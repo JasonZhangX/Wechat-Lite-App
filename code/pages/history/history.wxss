@@ -23,7 +23,8 @@ page{
     padding-left: 50rpx;
     border-left: 1px solid #CCC;
    padding-top: 25rpx;
-   padding-bottom: 25rpx;    
+   padding-bottom: 25rpx; 
+   min-height: 90rpx;   
 }
 
 .history-item .content:after{
