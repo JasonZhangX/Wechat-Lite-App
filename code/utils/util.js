@@ -26,22 +26,56 @@ var printf = function () {
 }
 
 var formatTimeStr = function (time, result) {
-  var reg = /(\d{4})(\-)(\d{2}\-\d{2})(\w)(\d{2}\:\d{2}\:\d{2})(\.\d{3}\w)/g;
-  var replacement;
+  var timeObj = new Date(time);
+  //var reg = /(\d{4})(\-)(\d{2}\-\d{2})(\w)(\d{2}\:\d{2}\:\d{2})(\.\d{3}\w)/g;
+  var timeStr;
+  var sYear = timeObj.getFullYear();
+  var sMonth = timeObj.getMonth() + 1;
+  var sDate = timeObj.getDate();
+  var sHours = timeObj.getHours();
+  var sMinutes = timeObj.getMinutes();
+  var sSeconds = timeObj.getSeconds();
+  var addZero = function(str){
+    return str.toString().length === 1 ? ('0' + str) : str;
+  }
+  var plainTime = function(){
+    var timeNow = new Date();
+    var timeDiff = timeNow.getTime() - timeObj.getTime();
+    var baseMinute = 1000 * 60;
+    var baseHour = baseMinute * 60;
+    if(timeDiff<0){
+      return 'Wrong time format.';
+    }
+    if(timeDiff/baseHour > 1){
+      return Math.round(timeDiff/baseHour) + '小时前';
+    }else if(timeDiff/baseMinute > 1){
+      return Math.round(timeDiff/baseMinute) + '分钟前';
+    }else{
+      return '刚刚';
+    }
+  }
+  sMonth = addZero(sMonth);
+  sDate = addZero(sDate);
+  sHours = addZero(sHours);
+  sMinutes = addZero(sMinutes);
+  sSeconds = addZero(sSeconds);
   switch (result) {
     case 'date':
-      replacement = '$1-$3';
+      timeStr = sYear + '-' + sMonth + '-' + sDate;
       break;
     case 'month':
-      replacement = '$1 $3';
+      timeStr = sMonth + '-' + sDate;
       break;
     case 'time':
-      replacement = '$5';
+      timeStr = sHours + ':' + sMinutes + ':' + sSeconds;
+      break;
+    case 'countdown':
+      timeStr = plainTime();
       break;
     default:
-      replacement = '$1-$3 $5';
+      timeStr = sYear + '-' + sMonth + '-' + sDate + ' ' + sHours + ':' + sMinutes + ':' + sSeconds;
   }
-  return time.replace(reg, replacement);
+  return timeStr;
 }
 
 var formatArea = function (apiArea) {
@@ -127,7 +161,7 @@ var formatStatusICON = function(status, size){
 }
 
 var sortByPriority = function(array){
-  
+  return array;
 }
 
 var getServiceIcon = function(serviceId, callback){

@@ -76,8 +76,8 @@ App({
       status: {
         title: '服务器仪表盘',
         path: 'pages/index/index',
-        //api: 'https://www.azure.cn/support/status-api?api=incidents',
-        api: 'http://wacnppe.blob.core.chinacloudapi.cn/marketing-resource/Content/support/shd/insidentData.json',
+        api: 'https://www.azure.cn/support/status-api?api=incidents',
+        //api: 'http://wacnppe.blob.core.chinacloudapi.cn/marketing-resource/Content/support/shd/insidentData.json',
         interval: 120000
       },
       history: {
@@ -89,7 +89,7 @@ App({
       service: {
         title: '所有服务',
         path: 'pages/service/service',
-        api: 'https://wacnppe.blob.core.chinacloudapi.cn/marketing-resource/Content/support/shd/shd.json'
+        api: 'https://wacn-ppe.chinacloudsites.cn/static/jsons/shd.json'
       },
       historyDetail: {
         title: '历史详情',
@@ -104,7 +104,7 @@ App({
         defaultURL: 'https://wacnppe.blob.core.chinacloudapi.cn/marketing-resource/media/images/shd/defaultIcon.png',
       },
       serviceName: {
-        api: 'https://wacnppe.blob.core.chinacloudapi.cn/marketing-resource/Content/support/shd/services.json'
+        api: 'https://wacn-ppe.chinacloudsites.cn/static/jsons/services.json'
       },
       maxRetryTimes: 3
     },
@@ -115,10 +115,10 @@ App({
       CHINA_ALL: '中国地区',
       CHINA_EAST: '中国东部',
       CHINA_NORTH: '中国北部',
-      GOOD: '服务正常',
-      WARNING: '性能警告',
-      ERROR: '服务中断',
-      INFORMATION: '附加信息',
+      GOOD: '良好',
+      WARNING: '警告',
+      ERROR: '错误',
+      INFORMATION: '信息',
       NETWORK_ERROR: '状态服务器无响应',
       RETRY_INFO: '是否尝试重新连接？'
     }
