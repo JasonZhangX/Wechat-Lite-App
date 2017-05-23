@@ -6,15 +6,21 @@ page{
    padding-right: 20rpx;
 }
 .history-item .date{
+    position: relative;
     flex: 1;
+    height: 100%;
     text-align: center;
-    line-height: 1rem;
     padding-left: 20rpx;
-   padding-top: 25rpx;
-   padding-bottom: 25rpx;    
+    padding-bottom: 25rpx;    
 }
 .history-item .date text{
-    font-size: 0.7rem;
+    display: block;
+    position: absolute;
+    font-size: 0.8rem;
+    left: 30rpx;
+    top: -8rpx;
+    font-weight: bold;
+    text-shadow: 1rpx 1rpx 4rpx #CCC;
 }
 .history-item .content{
     position: relative;
@@ -22,9 +28,9 @@ page{
     margin-left: 30rpx;
     padding-left: 50rpx;
     border-left: 1px solid #CCC;
-   padding-top: 25rpx;
-   padding-bottom: 25rpx; 
-   min-height: 90rpx;   
+    padding-top: 25rpx;
+    padding-bottom: 25rpx; 
+    min-height: 90rpx;   
 }
 
 .history-item .content:after{
@@ -34,8 +40,9 @@ page{
     height: 25rpx;
     display: block;
     position: absolute;
-    top: 40%;
-    left: -7px;
+    top: 50%;
+    margin-top: -12rpx;
+    left: -13rpx;
     border-radius: 25px;
 }
 
@@ -44,9 +51,10 @@ page{
 }
 .history-item .content .service{
     font-size: 0.9rem;
+    text-shadow: 1rpx 1rpx 4rpx #CCC;
 }
 .history-item .content .area{
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     margin-top: 10rpx;
     color: #666;
 }

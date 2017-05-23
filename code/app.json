@@ -9,7 +9,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#03a9f4",
-    "navigationBarTitleText": "服务器仪表盘",
+    "navigationBarTitleText": "Azure状态仪表盘",
     "navigationBarTextStyle":"white"
   },
  "tabBar": {

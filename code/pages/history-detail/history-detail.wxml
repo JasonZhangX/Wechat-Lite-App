@@ -22,7 +22,13 @@
     <view class="status form-group">
         <view class="form-label">事件类型：</view>
         <view class="icon-container">
-            <icon type="{{history.statusICON.type}}" size="{{history.statusICON.size}}"/><text>{{history.status}}</text>
+            <block wx:if="{{history.statusICON.type == 'safe_warn'}}">
+                <icon type="info" size="{{history.statusICON.size}}" color="#FFE100"/>
+                <text>{{history.status}}</text>
+            </block>
+            <block wx:else>
+                <icon type="{{history.statusICON.type}}" size="{{history.statusICON.size}}"/><text>{{history.status}}</text>
+            </block>       
         </view>
         
     </view>           

@@ -18,7 +18,13 @@
     <view class="status form-group">
         <view class="form-label">事件类型：</view>
         <view class="icon-container">
-            <icon type="{{incident.statusICON.type}}" size="{{incident.statusICON.size}}"/><text>{{incident.status}}</text>
+            <block wx:if="{{incident.statusICON.type == 'safe_warn'}}">
+                <icon type="info" size="{{incident.statusICON.size}}" color="#FFE100"/>
+                <text>{{incident.status}}</text>
+            </block>
+            <block wx:else>
+                <icon type="{{incident.statusICON.type}}" size="{{incident.statusICON.size}}"/><text>{{incident.status}}</text>
+            </block>
         </view>
         
     </view>           

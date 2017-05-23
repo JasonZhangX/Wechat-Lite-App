@@ -23,6 +23,8 @@ page{
 .history-detail .title{
     font-size: 1.2rem;
     margin-bottom: 15rpx;
+    color: #323a45;
+    text-shadow: 1rpx 1rpx 4rpx #CCC;
 }
 .history-detail .form-group{
     font-size: .8rem;

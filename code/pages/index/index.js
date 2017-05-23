@@ -66,7 +66,7 @@ Page({
     if (res.data.status === undefined) {
       return;
     }
-    var lastUpdateTime = AW.formatTimeStr(res.data.lastupdated);
+    var lastUpdateTime = AW.formatTimeStr(res.data.lastupdated, 'countdown');
     var incedentsData = {};
     var areaData = {};
     var pageStle = '';
@@ -125,11 +125,13 @@ Page({
               statusText: AW.formatStatusStr(incidentObj.status),
             });
           }
-          incidentObj.summary = AW.limitStr(item.updates[0].description, 40);
+          incidentObj.summary = AW.limitStr(item.updates[0].description, 45);
           incidentObj.description = item.updates[0].description;
           incedentsData.incidentList.push(incidentObj);         
         });
-  
+        
+        incedentsData.incidentList = AW.sortByPriority(incedentsData.incidentList);
+
         self.setData({
           incidents: incedentsData,
           area: areaData,

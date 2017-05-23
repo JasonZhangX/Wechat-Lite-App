@@ -23,6 +23,7 @@ page{
 .incident-detail .title{
     font-size: 1.2rem;
     margin-bottom: 15rpx;
+    text-shadow: 1rpx 1rpx 4rpx #CCC;
 }
 .incident-detail .form-group{
     font-size: .8rem;

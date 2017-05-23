@@ -17,6 +17,7 @@ page{
     display: block;
     font-size: 1.2rem;
     text-align: center;
+    text-shadow: 1rpx 1rpx 4rpx #CCC;
 }
 .status-info .service-name{
     font-size: 0.9rem;
@@ -98,7 +99,8 @@ page{
     border-right: none;
 }
 .status-area .area-detail .area-title{
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    text-shadow: 1rpx 1rpx 4rpx #CCC;
     text-align: center;
     font-weight: bold;
     height: 50rpx;
@@ -109,7 +111,7 @@ page{
 .status-area .area-detail .area-data{
     padding-left: 15rpx;
     padding-right: 15rpx;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     text-align: center;    
 }
 .status-area .area-detail .area-data .area-data-item{
@@ -121,7 +123,7 @@ page{
 }
 .status-area .update-time text{
     display: block;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     text-align: center;
     color: #666;
 }
