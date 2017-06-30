@@ -20,6 +20,7 @@ App({
     wx.request({
       url: oParam.rUrl,
       data: {},
+      dataType: 'json',
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       // header: {}, // 设置请求的 header
       success: function (res) {
@@ -77,7 +78,7 @@ App({
         title: '服务器仪表盘',
         path: 'pages/index/index',
         api: 'https://www.azure.cn/support/status-api?api=incidents',
-        //api: 'http://wacnppe.blob.core.chinacloudapi.cn/marketing-resource/Content/support/shd/insidentData.json',
+        //api: 'https://wacnppe.blob.core.chinacloudapi.cn/marketing-resource/Content/support/shd/insidentData.json',
         interval: 120000
       },
       history: {
@@ -89,7 +90,7 @@ App({
       service: {
         title: '所有服务',
         path: 'pages/service/service',
-        api: 'https://wacn-ppe.chinacloudsites.cn/static/jsons/shd.json'
+        api: 'https://www.azure.cn/static/jsons/shd.json'
       },
       historyDetail: {
         title: '历史详情',
@@ -99,12 +100,16 @@ App({
         title: '事件详情',
         path: 'pages/history-detail/incident-detail',
       },
+      failover: {
+        title: '技术支持',
+        path: 'pages/failover/failover',
+      },
       icon: {
         baseURL: 'https://wacnppe.blob.core.chinacloudapi.cn/marketing-resource/media/images/shd/',
         defaultURL: 'https://wacnppe.blob.core.chinacloudapi.cn/marketing-resource/media/images/shd/defaultIcon.png',
       },
       serviceName: {
-        api: 'https://wacn-ppe.chinacloudsites.cn/static/jsons/services.json'
+        api: 'https://www.azure.cn/static/jsons/services.json'
       },
       maxRetryTimes: 3
     },

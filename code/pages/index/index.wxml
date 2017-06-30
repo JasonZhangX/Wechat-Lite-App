@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="flex-container_center {{pageStle}}">
-  <view class="flex-item flex-container_middle">
+  <view class="status-info-container flex-item flex-container_middle">
       <view class="flex-item status-info">
         <block wx:if="{{incidents.status == 'OK'}}">
           <icon type="{{incidents.statusICON.type}}" size="{{incidents.statusICON.size}}" />

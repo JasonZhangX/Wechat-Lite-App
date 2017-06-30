@@ -1,0 +1,28 @@
+<view class="failover-container">
+  <view class="failover-tip">
+    <image src="../../images/banner-support-plan.png"></image>
+    <view class="tip-content">Azure状态服务器正在维护，您可以通过以下途获得技术支持。</view>
+  </view>
+  <view class="failover-content">
+    <view class="failover-item">
+      <view class="title">联系客服</view>
+      <view class="content">
+        <!--<contact-button size="20" session-from="weapp">
+        </contact-button>-->
+        <button class="button" open-type="contact" hover-class="button_hover">进入客服会话</button>
+      </view>
+    </view>
+    <view class="failover-item">
+      <view class="title">拨打热线电话</view>
+      <view class="content">拨打<text class="tel-number" bindtap="callTel" data-phone="4000890365">400-089-0365</text>或<text class="tel-number" bindtap="callTel" data-phone="01084563652">010-84563652</text>获取支持。 如遇坐席繁忙，请耐心等待。</view>
+    </view>
+    <view class="failover-item">
+      <view class="title">公众号</view>
+      <view class="content">点击本页右上角按钮进入<text class="strong">关于Azure状态仪表盘</text>，点击相关公众号进入<text class="strong">Azure云技术支持</text>公众号获取更多信息。</view>
+    </view>
+    <view class="failover-item">
+      <view class="title">访问备用Azure状态网站</view>
+      <view class="content">https://www.microsoftazurestatus.cn(<text class="tip-text">在浏览器中输入网址进行访问</text>)</view>
+    </view>
+  </view>
+</view>

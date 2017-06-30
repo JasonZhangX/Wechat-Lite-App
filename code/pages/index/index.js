@@ -14,9 +14,18 @@ Page({
   onLoad: function () {
     // this.checkStatus();
     this.init();
+
   },
   onShow: function () {
     //this.checkStatus();
+  },
+  failover: function () {
+    wx.redirectTo({
+      url: '../failover/failover'
+    });
+  },
+  isAPIServerDown: function () {
+
   },
   checkStatus: function () {
     var self = this;
@@ -33,18 +42,19 @@ Page({
         console.log('success');
       },
       fail: function (error) {
-        if(self.data.retryTimes < app.globalData.config.maxRetryTimes){
+        if (self.data.retryTimes < app.globalData.config.maxRetryTimes) {
           app.popup({
             title: app.globalData.msg.NETWORK_ERROR,
             content: app.globalData.msg.RETRY_INFO,
             callback: self.checkStatus
           });
           self.data.retryTimes++;
-        }else{
+        } else {
           app.popup({
             title: app.globalData.msg.NETWORK_ERROR,
             showCancel: false,
             content: error.errMsg,
+            callback: self.failover
           });
         }
         console.log(error);
@@ -56,10 +66,10 @@ Page({
     })
   },
   viewDetail: function (event) {
-      var detailId = event.currentTarget.dataset.id;
-      wx.navigateTo({
-          url: '../incident-detail/incident-detail?id=' + detailId
-      });
+    var detailId = event.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../incident-detail/incident-detail?id=' + detailId
+    });
   },
   formateData: function (res) {
     var self = this;
@@ -85,12 +95,12 @@ Page({
         pageStle: pageStle,
       });
     } else {
-      app.getServicesName(function(){
+      app.getServicesName(function () {
         incedentsData.incidentList = [];
         areaData.chinaNorth = [];
         areaData.chinaEast = [];
         areaData.china = [];
-        res.data.incidents.forEach(function(item, index){
+        res.data.incidents.forEach(function (item, index) {
           var incidentObj = {};
           incidentObj.id = index;
           incidentObj.status = item.status;
@@ -101,7 +111,7 @@ Page({
           incidentObj.dataMilliseconds = (new Date(item.startdate)).getTime();
           incidentObj.area = AW.formatArea(item.impacted[0].regions);
           incidentObj.areaId = item.impacted[0].regions;
-          if(AW.isArea('china-north', incidentObj.areaId)){
+          if (AW.isArea('china-north', incidentObj.areaId)) {
             areaData.chinaNorth.push({
               serviceName: incidentObj.serviceName,
               serviceId: incidentObj.serviceId,
@@ -109,7 +119,7 @@ Page({
               statusText: AW.formatStatusStr(incidentObj.status),
             });
           }
-          if(AW.isArea('china-east', incidentObj.areaId)){
+          if (AW.isArea('china-east', incidentObj.areaId)) {
             areaData.chinaEast.push({
               serviceName: incidentObj.serviceName,
               serviceId: incidentObj.serviceId,
@@ -117,7 +127,7 @@ Page({
               statusText: AW.formatStatusStr(incidentObj.status),
             });
           }
-          if(AW.isArea('global', incidentObj.areaId)){
+          if (AW.isArea('global', incidentObj.areaId)) {
             areaData.china.push({
               serviceName: incidentObj.serviceName,
               serviceId: incidentObj.serviceId,
@@ -127,9 +137,9 @@ Page({
           }
           incidentObj.summary = AW.limitStr(item.updates[0].description, 45);
           incidentObj.description = item.updates[0].description;
-          incedentsData.incidentList.push(incidentObj);         
+          incedentsData.incidentList.push(incidentObj);
         });
-        
+
         incedentsData.incidentList = AW.sortByPriority(incedentsData.incidentList);
 
         self.setData({
@@ -137,10 +147,10 @@ Page({
           area: areaData,
           updateTime: lastUpdateTime,
           pageStle: pageStle,
-        });              
+        });
       });
     }
-    
+
   },
   onShareAppMessage: function () {
     return {

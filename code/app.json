@@ -4,7 +4,8 @@
     "pages/history/history",
     "pages/service/service",
     "pages/history-detail/history-detail",
-    "pages/incident-detail/incident-detail"
+    "pages/incident-detail/incident-detail",
+    "pages/failover/failover"
   ],
   "window":{
     "backgroundTextStyle":"light",

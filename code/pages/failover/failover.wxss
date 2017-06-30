@@ -1,0 +1,62 @@
+page{
+    color: #323a45;
+}
+.failover-tip{
+    padding: 50rpx 80rpx 30rpx;
+    text-align: center;
+    background: linear-gradient(#fff, #f2f2f2);
+}
+.failover-tip image{
+    width: 256rpx;
+    height: 256rpx;
+}
+.failover-tip icon{
+    text-align: center;
+}
+.failover-tip text{
+    font-size: 1em;
+    text-align: center;   
+    text-shadow: 1rpx 1rpx 4rpx #CCC; 
+}
+
+.failover-content{
+    padding: 20rpx 80rpx 0;   
+}
+
+.failover-content .failover-item{
+    padding-top: 30rpx;
+    padding-bottom: 30rpx;
+    border-bottom: 1px dotted #F0F0F0;
+}
+.failover-content .failover-item:last-child{
+    border-bottom: none;
+}
+
+.failover-content .failover-item .title{
+    font-size: .9em;
+    text-shadow: 1rpx 1rpx 4rpx #CCC;
+    margin-bottom: 10rpx;
+}
+
+.failover-content .failover-item .content{
+    color: #666666;
+    font-size: .8em;
+    padding-top: 10rpx;
+}
+
+.failover-content .failover-item .content .tel-number{
+    padding: 0 5rpx;
+    color: #03a9f4;
+    font-weight: bold;
+}
+
+.failover-content .failover-item .content .strong{
+    padding: 0 5rpx;
+    color: #03a9f4;
+    font-weight: bold;
+}
+
+.failover-content .failover-item .content .tip-text{
+    color: #666666;
+}
+
