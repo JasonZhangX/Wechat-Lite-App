@@ -52,6 +52,7 @@ page{
 .history-item .content .service{
     font-size: 0.9rem;
     text-shadow: 1rpx 1rpx 4rpx #CCC;
+    color: #03a9f4;
 }
 .history-item .content .area{
     font-size: 0.8rem;

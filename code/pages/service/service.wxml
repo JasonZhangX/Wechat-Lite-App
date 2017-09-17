@@ -9,7 +9,7 @@
     <view class="row level1">
       <view class="td">{{level1Item.name}}</view>
     </view>
-    <block wx:if="{{level1Item.service.length > 1}}">
+    <block wx:if="{{level1Item.service.length > 1 || level1Item.type == 's3l'}}">
       <block wx:for="{{level1Item.service}}" wx:for-item="level2Item" wx:key="level2Item.index">
         <view class="row level2" data-slug="{{level2Item.slug}}">
           <view class="td tl">{{level2Item.name}}</view>

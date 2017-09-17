@@ -9,28 +9,29 @@ Page({
         this.list();
     },
     list: function () {
-        var that = this;
-        app.loading();
-        wx.request({
-            url: app.globalData.config.service.api,
-            data: {},
-            method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-            // header: {}, // 设置请求的 header
-            success: function (res) {
-                // success
-                console.log(res);
-                that.formateData(res.data);
-                console.log('success');
-            },
-            fail: function () {
-                // fail
-                console.log('fail');
-            },
-            complete: function () {
-                // complete
-                app.loading('hide');
-            }
-        })
+        // var that = this;
+        // app.loading();
+        // wx.request({
+        //     url: app.globalData.config.service.api,
+        //     data: {},
+        //     method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+        //     // header: {}, // 设置请求的 header
+        //     success: function (res) {
+        //         // success
+        //         console.log(res);
+        //         that.formateData(res.data);
+        //         console.log('success');
+        //     },
+        //     fail: function () {
+        //         // fail
+        //         console.log('fail');
+        //     },
+        //     complete: function () {
+        //         // complete
+        //         app.loading('hide');
+        //     }
+        // })
+      this.formateData(app.globalData.serviceSlug);
     },
     formateData: function (res) {
         var incidentsData = getCurrentPages()[0].data.incidents.incidentList;

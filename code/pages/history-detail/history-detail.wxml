@@ -37,6 +37,7 @@
         <view class="form-content">{{history.area}}</view>
     </view>
     <view class="description">
-        <text>{{history.description}}</text>
+        <!-- <text>{{history.description}}</text> -->
+        <rich-text nodes="{{history.description}}"></rich-text>
     </view>
 </view>

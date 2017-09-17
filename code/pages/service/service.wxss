@@ -54,6 +54,9 @@
 
 .table .level2 .tl{
     text-indent: 30rpx;
+    white-space:nowrap;
+    max-width:330rpx;
+
 }
 
 .table .level3:nth-child(even){
@@ -62,6 +65,9 @@
 
 .table .level3 .tl{
     text-indent: 60rpx;
+    white-space:nowrap;
+    max-width:330rpx;
+
 }
 
 .table .level2 .td{
