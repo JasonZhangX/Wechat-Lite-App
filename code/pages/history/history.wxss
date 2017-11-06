@@ -59,3 +59,8 @@ page{
     margin-top: 10rpx;
     color: #666;
 }
+
+.history-container .no-data{
+    text-align: center;
+    margin: 280rpx auto;
+}

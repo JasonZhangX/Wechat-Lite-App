@@ -37,22 +37,24 @@ Page({
     },
     formateData: function (res) {
         var incidentsData = [];
-        res.data.incidents.forEach(function(value,index){
-            var incident = {
-                id: index,
-                title: value.title,
-                status: value.status,
-                state: value.state,
-                startDate: AW.formatTimeStr(value.startdate),
-                startMonth: AW.formatTimeStr(value.startdate, 'month'),
-                endDate: AW.formatTimeStr(value.enddate),
-                service: value.impacted[0].service,
-                area: AW.formatArea(value.impacted[0].regions),
-                description: value.updates[0].description
-            };    
-            incidentsData.push(incident);
-        });
-        console.log(incidentsData);
+        if (res.data.incidents != null){
+            res.data.incidents.forEach(function (value, index) {
+                var incident = {
+                    id: index,
+                    title: value.title,
+                    status: value.status,
+                    state: value.state,
+                    startDate: AW.formatTimeStr(value.startdate),
+                    startMonth: AW.formatTimeStr(value.startdate, 'month'),
+                    endDate: AW.formatTimeStr(value.enddate),
+                    service: value.impacted[0].service,
+                    area: AW.formatArea(value.impacted[0].regions),
+                    description: value.updates[0].description
+                };
+                incidentsData.push(incident);
+            });
+            console.log(incidentsData);
+        }
         this.setData({
             incidents: incidentsData
         });

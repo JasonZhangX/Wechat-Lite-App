@@ -1,13 +1,19 @@
 <view class="history-container">
-  <block wx:for="{{incidents}}" wx:key="{{item.id}}">
-    <view class="history-item flex-container_middle" bindtap="viewDetail" data-id="{{item.id}}" hover="true" hover-class="link_hover">
-      <view class="date flex-item">
-        <text>{{item.startMonth}}</text>
-      </view>
-      <view class="content flex-item">
-        <text class="service">{{item.title}}</text>
-        <text class="area">{{item.area}}</text>
-      </view>
-    </view>  
-  </block>
+
+    <block wx:if="{{incidents.length > 0}}">
+        <block wx:for="{{incidents}}" wx:key="{{item.id}}">
+            <view class="history-item flex-container_middle" bindtap="viewDetail" data-id="{{item.id}}" hover="true" hover-class="link_hover">
+            <view class="date flex-item">
+                <text>{{item.startMonth}}</text>
+            </view>
+            <view class="content flex-item">
+                <text class="service">{{item.title}}</text>
+                <text class="area">{{item.area}}</text>
+            </view>
+            </view>  
+        </block>
+    </block>
+    <block wx:else>
+        <view class="no-data">没有历史数据</view>
+    </block> 
 </view>

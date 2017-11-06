@@ -182,6 +182,7 @@ App({
       "cosmos-db": "Azure Cosmos DB",
       "expressroute\\circuits": "ExpressRoute Circuits",
       "expressroute\\gateways": "ExpressRoute 网关",
+      "analysis-services": "Azure分析服务",
     },
     serviceSlug:
     {
@@ -339,14 +340,14 @@ App({
                   "china-north": "true"
                 }
               },
-              {
-                "name": "API管理",
-                "slug": "api-management",
-                "regions": {
-                  "china-east": "true",
-                  "china-north": "true"
-                }
-              },
+              // {
+              //   "name": "API管理",
+              //   "slug": "api-management",
+              //   "regions": {
+              //     "china-east": "true",
+              //     "china-north": "true"
+              //   }
+              // },
               {
                 "-has-inner-services": "true",
                 "name": "媒体服务",
@@ -475,6 +476,13 @@ App({
                 "slug": "power-bi-embedded",
                 "regions": {
                   "china-east": "true",
+                  "china-north": "true"
+                }
+              },
+              {
+                "name": "Azure分析服务",
+                "slug": "analysis-services",
+                "regions": {
                   "china-north": "true"
                 }
               }
