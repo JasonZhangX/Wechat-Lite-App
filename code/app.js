@@ -157,7 +157,7 @@ App({
       "redis-cache": "Redis 缓存",
       "sql-server-stretch-database": "SQL Server Stretch Database",
       "hdinsight": "HDInsight",
-      "power-bi-embedded": "Power BI Embedded",
+      "power-bi-embedded": "Power BI 工作区集合",
       "face-api": "人脸识别 API",
       "Emotion-api": "情绪识别 API",
       "Ecomputervision": "计算机视觉 API ",
@@ -472,7 +472,7 @@ App({
                 }
               },
               {
-                "name": "Power BI Embedded",
+                "name": "Power BI 工作区集合",
                 "slug": "power-bi-embedded",
                 "regions": {
                   "china-east": "true",
