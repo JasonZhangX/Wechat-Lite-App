@@ -183,6 +183,8 @@ App({
       "expressroute\\circuits": "ExpressRoute Circuits",
       "expressroute\\gateways": "ExpressRoute 网关",
       "analysis-services": "Azure分析服务",
+      "network-watcher":"网络观察程序",
+
     },
     serviceSlug:
     {
@@ -290,7 +292,15 @@ App({
                   "china-east": "true",
                   "china-north": "true"
                 }
-              }
+              },
+              {
+                  "name": "网络观察程序",
+                  "slug": "network-watcher",
+                  "regions": {
+                      "china-east": "true",
+                      "china-north": "true"
+                  }
+              }              
             ]
           },
           {
@@ -340,14 +350,14 @@ App({
                   "china-north": "true"
                 }
               },
-              // {
-              //   "name": "API管理",
-              //   "slug": "api-management",
-              //   "regions": {
-              //     "china-east": "true",
-              //     "china-north": "true"
-              //   }
-              // },
+              {
+                "name": "API管理",
+                "slug": "api-management",
+                "regions": {
+                  "china-east": "true",
+                  "china-north": "true"
+                }
+              },
               {
                 "-has-inner-services": "true",
                 "name": "媒体服务",
