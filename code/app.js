@@ -350,14 +350,14 @@ App({
                   "china-north": "true"
                 }
               },
-              {
-                "name": "API管理",
-                "slug": "api-management",
-                "regions": {
-                  "china-east": "true",
-                  "china-north": "true"
-                }
-              },
+            //   {
+            //     "name": "API管理",
+            //     "slug": "api-management",
+            //     "regions": {
+            //       "china-east": "true",
+            //       "china-north": "true"
+            //     }
+            //   },
               {
                 "-has-inner-services": "true",
                 "name": "媒体服务",
